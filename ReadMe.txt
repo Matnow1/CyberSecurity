@@ -1,4 +1,5 @@
-This repository is a compilation of various projects/CTFs related to cybersecurity, intended to document work over time.
+This repository is a compilation of projects and CTFs related to cybersecurity.
+Each project contains documentation that consists of proof, lessons/tools learned, and time taken
 
 Project Tree
 
