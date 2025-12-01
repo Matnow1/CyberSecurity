@@ -9,8 +9,5 @@ Cybersecurity
     -> Malware Reverse Engineering
     -> DFIR
   -> Offensive
-    -> OWASP Juice Shop
-    -> Webgoat
-    -> DVWA
-    -> PortSwigger Academy
-    -> HTB
+    -> Vulnerable Web Appls (WebGoat, JuiceShop, DVWA, PortSwigger Academy)
+    -> CTFS (HTB)
