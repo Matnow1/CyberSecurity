@@ -1,6 +1,6 @@
 --Tools Used--
   EntraID: Microsoft IAM utility
-  Wazuh: Open Source XDR(SIEM), Project will be uploaded soon
+  Wazuh: Open Source XDR(SIEM), Project will be uploaded around end of 2025
   Wireshark: Analyze/Record Network Traffic From an Endpoint
   Ghidra: Reverse Engineer Malware and Malware Analysis
   Strings: Extract strings from executables, used for Malware Analysis
