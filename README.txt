@@ -1,8 +1,6 @@
 This repository is a summary of projects and CTFs related to cybersecurity that I have worked on.
 
-Project Tree
-
-Cybersecurity
+--Project Tree--
  -> Defensive
     -> EntraID
     -> HackTheBox
