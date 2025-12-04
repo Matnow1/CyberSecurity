@@ -1,4 +1,4 @@
---Tools Used Summary--
+--Tools Used--
   NMAP:               Port Scanning
   Burp Suite:         Manipulating Web Requests and Directory Fuzzing
   Fuff/GoBuster:      Directory Fuzzing
@@ -10,4 +10,4 @@
 
 --Directory Summary--
   VulnerableWebApps Includes WebGoat, JuiceShop, DVWA, and Portswigger Academy.
-  HTB is a CTF-based platform where you are given a target IP and must progress from no access to User to Root.
+  HTB Machines is a CTF-based platform where you are given a target IP and must progress from no access to User to Root.
