@@ -4,10 +4,11 @@ Project Tree
 
 Cybersecurity
  -> Defensive
-    -> IAM
-    -> SOC
-    -> Malware Reverse Engineering
-    -> DFIR
+    -> EntraID
+    -> HackTheBox
+      -> SOC
+      -> Malware Analysis
+      -> DFIR
   -> Offensive
     -> Vulnerable Web Apps (WebGoat, JuiceShop, DVWA, PortSwigger Academy)
-    -> CTFS (HTB)
+    -> HackTheBox(CTF)
