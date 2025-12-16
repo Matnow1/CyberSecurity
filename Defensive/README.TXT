@@ -1,10 +1,12 @@
 --Tools Used--
   EntraID: Microsoft IAM utility
-  Wazuh: Open Source XDR(SIEM), Project will be uploaded around end of 2025
+  Wazuh: Open Source XDR(SIEM), Project will be uploaded around the end of 2025
   Wireshark: Analyze/Record Network Traffic From an Endpoint
-  Ghidra: Reverse Engineer Malware and Malware Analysis
+  Ghidra: Reverse Engineer Malware
   Strings: Extract strings from executables, used for Malware Analysis
-  Autopsy: Forensic analysis of files/systems after an Intrusion
+  Autopsy: Forensic analysis of files/systems after an Intrusion, mainly for organization and file integrity(hashes)
+  Zimmerman: A Group of tools for forensic analyses, including parsers for reading specific Windows files(MFT, .ink, etc)
+  Event Viewer: Analyze windows event logs
 
 --Directory Summary--
   EntraID is my write-up of a demo IAM Environment.
