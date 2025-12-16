@@ -7,6 +7,7 @@
   Hashcat:            Hash Cracking
   winPEAS/linPEAS:    Windows/Linux privilege escalation finder
   ike-scan/psk-crack: Dedicated ISAKMP Enumeration/Hash Cracking
+  Impacket.py:        Collection of Python tools for low-level access to specific network protocols
 
 --Directory Summary--
   VulnerableWebApps Includes WebGoat, JuiceShop, DVWA, and Portswigger Academy.
