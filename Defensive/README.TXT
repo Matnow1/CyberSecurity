@@ -6,7 +6,7 @@
   Strings: Extract strings from executables, used for Malware Analysis
   Autopsy: Forensic analysis of files/systems after an Intrusion, mainly for organization and file integrity(hashes)
   Zimmerman: A Group of tools for forensic analyses, including parsers for reading specific Windows files(MFT, .ink, etc)
-  Event Viewer: Analyze windows event logs
+  Event Viewer: Analyze Windows event logs
 
 --Directory Summary--
   EntraID is my write-up of a demo IAM Environment.
