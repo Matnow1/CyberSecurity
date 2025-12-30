@@ -1,6 +1,6 @@
 --Tools Used--
   EntraID: Microsoft IAM utility
-  Wazuh: Open Source XDR(SIEM), Project will be uploaded around the end of 2025
+  Splunk: SIEM
   Wireshark: Analyze/Record Network Traffic From an Endpoint
   Ghidra: Reverse Engineer Malware
   Strings: Extract strings from executables, used for Malware Analysis
@@ -10,4 +10,5 @@
 
 --Directory Summary--
   EntraID is my write-up of a demo IAM Environment.
+  Splunk is my write-up of search filters based on demo data.
   HTB Sherlocks is a platform for defensive cybersecurity training in categories such as DFIR, SOC, Malware Analysis, Threat Intelligence, and Cloud Security.
