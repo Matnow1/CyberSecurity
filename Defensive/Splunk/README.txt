@@ -15,7 +15,7 @@
 	--Verify Data
 		Under "Apps", click "Search & Reporting", then search for "index=botsv3 earliest=0".
 		This is a massive data set(2.1 million events), so this is just to confirm it exists.
-    I will only be using Windows security event logs.
+    	I will only be using Windows security event logs.
 
 --Credential Abuse--
 	4648 - Explicit Credential Use
