@@ -1,3 +1,5 @@
+This Defensive CTF focuses on analyzing a forensic copy of a political dissident's laptop to determine where they have been and what they are doing.
+
 Tools Used:
 	Autopsy
 	MFTECmd
