@@ -10,7 +10,7 @@ Target:
 	  	nmap -sS -p- --min-rate=1000 -oN recon/ports.nmap editor.htb
 	  	nmap -sSVC -p 22,80,8080 -oN recon/versions.nmap editor.htb
 		
-		We get ssh for ubuntu(22), nginx(80), and jetty(8080)
+		I got ssh for ubuntu(22), nginx(80), and jetty(8080)
 	
 --HTTP exploration/exploitation
 	Looking around, I found a wiki subdomain, you have to add it to hosts with
@@ -30,8 +30,7 @@ Target:
 	    [enter]
 
 --Initial to User access
-	
-	After researching and manual searching config files, i found a password in a config file -- theEd1t0rTeam99
+	After researching and manually searching config files, I found a password in a config file -- theEd1t0rTeam99
 	  	cat webapps/xwiki/WEB-INF/hibernate.cfg.xml | grep "password"
 	
 	using cat /etc/passwd we can see there are 2 users, oliver, _laurel
@@ -64,4 +63,3 @@ Target:
 -Root
 	Read the flag
 		cat root.txt
-
