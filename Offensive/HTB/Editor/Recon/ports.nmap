@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Tue Dec  2 22:00:32 2025 as: /usr/lib/nmap/nmap --privileged -sS -p- --min-rate=1000 -oN nmap/ports.nmap 10.10.11.80
+Nmap scan report for 10.10.11.80
+Host is up (0.061s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+8080/tcp open  http-proxy
+
+# Nmap done at Tue Dec  2 22:01:09 2025 -- 1 IP address (1 host up) scanned in 36.85 seconds
