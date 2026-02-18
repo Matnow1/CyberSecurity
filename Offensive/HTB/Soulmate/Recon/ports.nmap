@@ -1,0 +1,9 @@
+# Nmap 7.95 scan initiated Fri Dec  5 14:39:31 2025 as: /usr/lib/nmap/nmap --privileged -sS -p- --min-rate=1000 -oN openPorts.nmap Soulmate.htb
+Nmap scan report for Soulmate.htb (10.10.11.86)
+Host is up (0.050s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Fri Dec  5 14:40:36 2025 -- 1 IP address (1 host up) scanned in 65.13 seconds
