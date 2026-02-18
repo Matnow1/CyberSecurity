@@ -11,4 +11,4 @@
 
 --Directory Summary--
   VulnerableWebApps Includes WebGoat, JuiceShop, DVWA, and Portswigger Academy.
-  HTB Machines is a CTF-based platform where you are given a target IP and must progress from no access to User to Root.
+  HTB Machines is a CTF-based platform where you are given a target IP and must exploit vulnerabilities to gain user and root access.
