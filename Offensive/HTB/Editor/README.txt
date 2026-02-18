@@ -7,8 +7,8 @@ Target:
 
 --Nmap
 	Starting with a port scan followed up with a versions/scripts scan
-	  	nmap -sS -p- --min-rate=1000 -oN recon/ports.nmap editor.htb
-	  	nmap -sSVC -p 22,80,8080 -oN recon/versions.nmap editor.htb
+	  	nmap -sS -p- --min-rate=1000 -oN Recon/ports.nmap editor.htb
+	  	nmap -sSVC -p 22,80,8080 -oN Recon/versions.nmap editor.htb
 		
 		I got ssh for ubuntu(22), nginx(80), and jetty(8080)
 	
