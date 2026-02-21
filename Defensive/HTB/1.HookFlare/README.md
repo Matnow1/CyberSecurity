@@ -19,11 +19,12 @@ Foundation:
 &emsp;"2025-02-01 16:20:32"
 ![Photos/Q1.png](Photos/Q1.png)
 
-3. Provide the UTC timestamp marking the start of the malicious application download.  
+2. Provide the UTC timestamp marking the start of the malicious application download.  
 &emsp;The download is a link, not in an app store, so I checked Chrome's download history in Autopsy by going to  
 &emsp;android-9.0-r2/data/data/com.android.chrome/app_chrome/Default/History, then I opened the application tab and the downloads table.  
 &emsp;I got a start time of 13382903003690820. This is in webkit time, so I used a converter(https://www.epochconverter.com/webkit)  
-&emsp;"2025-02-01 17:03:23"  
+&emsp;"2025-02-01 17:03:23"
+![Photos/Q2.png](Photos/Q2.png)
 
 4. Provide the package name of the malicious application.  
 &emsp;From the Chrome download history, I kept a note of the download destination(android-x/data/media/0/Download/S1rBank.apk)  
