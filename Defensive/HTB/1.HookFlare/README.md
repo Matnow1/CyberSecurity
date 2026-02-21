@@ -13,7 +13,7 @@ Foundation:
 &emsp;For simplicity, open the .dd image in Autopsy as a disk image & set the timezone to UTC+0  
 
 1. Provide the UTC timestamp of the phishing SMS.   
-&emsp;Under Data Artifacts -> messages, I saw 4 greetings.
+&emsp;Under Data Artifacts -> messages, I saw 4 greetings.  
 &emsp;Then a 5th message from a bank about a transaction, and to confirm it, you need to update the app from a specific URL.  
 &emsp;This is a very suspicious message. The time of the message is under the Date/Time column  
 &emsp;"2025-02-01 16:20:32"
@@ -40,14 +40,14 @@ Foundation:
 6. Provide the number of runtime permissions granted to the malicious application.  
 &emsp;In Autopsy, go to android-x/data/system/users/0/runtime-permissions.xml, and open it in an external window  
 &emsp;Then look for the package name identified in Q3 and count the permissions  
-&emsp;"4"
+&emsp;"4"  
 ![Photos/Q4.png](Photos/Q4.png)  
   
 8. Provide the last access timestamp for the read sms permission used by the malicious application.  
 &emsp;In Autopsy, open the android-x/data/system/appops.xml in external view  
 &emsp;Ctrl+f the package name in Q3, You will have to know the operation integer to string correlation which varies by android version.  
 &emsp;In this version, 14 is equal to READ_SMS, so convert the Unix timestamp to human human-readable format and get   
-&emsp;"2025-02-01 17:07:18"
+&emsp;"2025-02-01 17:07:18"  
 ![Photos/Q5.png](Photos/Q5.png)  
 
 10. Provide the URL used by the malware for data exfiltration.  
@@ -63,16 +63,16 @@ Foundation:
 ![Photos/Q7.png](Photos/Q7.png)  
 
 14. If the primary server is unavailable, the malicious application redirects data exfiltration to an alternate URL. Identify and provide the alternate URL.  
-&emsp;Checking the usage shows that IO.c.doInBackground uses the connection check function "a".
+&emsp;Checking the usage shows that IO.c.doInBackground uses the connection check function "a".  
 ![Photos/Q8(1).png](Photos/Q8(1).png)  
-&emsp;If the connection check passes, it uses the other function in MyBackgroundService ("b") to send a message.
-&emsp;If the connection fails, it goes to B.h.IO, which has a hardcoded Discord webhook as a backup
+&emsp;If the connection check passes, it uses the other function in MyBackgroundService ("b") to send a message.  
+&emsp;If the connection fails, it goes to B.h.IO, which has a hardcoded Discord webhook as a backup  
 ![Photos/Q8(2).png](Photos/Q8(2).png)  
 &emsp;"https://discord.com/api/webhooks/1334648260610097303/-Lkxr0eZRO_fb_SaumBbBMZyANM3lyeCkR-E1NXXRASPbtRdNksQSzx4pY1ZGQkFR2H8"
 ![Photos/Q8(3).png](Photos/Q8(3).png)  
 
 16. The malicious application encrypts data before sending it to the server. Provide the encryption key used.  
-&emsp;From IO.c.doInBackground the message is the variable bArrEncode which is base64 encoded message.
+&emsp;From IO.c.doInBackground the message is the variable bArrEncode which is base64 encoded message.  
 &emsp;The message is in plaintext above in the variable sb, but it is also encrypted in B.h.C
 ![Photos/Q9(1).png](Photos/Q9(1).png)  
 &emsp;And in B.h.C the key is in plaintext  
@@ -80,12 +80,12 @@ Foundation:
 ![Photos/Q9(2).png](Photos/Q9(2).png)  
 
 18. Credit card information was stolen. What was the second line in the exfiltrated payment information?  
-&emsp;In the pcap we can find a few calls to the c2 server but the data is encrypted and encoded.
-&emsp;Using the filter ' http.request.full_uri == "http://s1rbank.net/api/data" ' we can see all the c2 requests.
-&emsp;As expected, for every message, there is a connection check with the HEAD method
-&emsp;The first post request is about card details, the second post is every message recorded, and the third one was blank.   
+&emsp;In the pcap we can find a few calls to the c2 server but the data is encrypted and encoded.  
+&emsp;Using the filter ' http.request.full_uri == "http://s1rbank.net/api/data" ' we can see all the c2 requests.  
+&emsp;As expected, for every message, there is a connection check with the HEAD method  
+&emsp;The first post request is about card details, the second post is every message recorded, and the third one was blank.  
 ![Photos/Q10(1).png](Photos/Q10(1).png)  
-&emsp;I set up a CyberChef recipe that first uses "From Base64" and then AES decrypt with EDB and the key from Q9 as UTF8. [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'0x_S1r_x58!@%2353cuReK371337!$%25%5E%26*'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=L05WRVF3ZVpxRTNjOEJEeFR2MHZ3Ynd2OEF4MVJ5MEs2K21VVTdkeVVqaWNPdTdQRW5yUEhJRW1VZS83Y2NmS21MS21TMlF3SVFZTjhibTV4aDY0c0l6eWt5UUhXc05QS0Rud3lRZkNObEtuczZ2UGxPbUpvYzh2MDAzbmJxWkwNCg&ieol=CRLF)  
+&emsp;I set up a CyberChef recipe that first uses "From Base64" and then AES decrypt with EDB and the key from Q9 as UTF8. [Recipe](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'0x_S1r_x58!@%2353cuReK371337!$%25%5E%26*'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=L05WRVF3ZVpxRTNjOEJEeFR2MHZ3Ynd2OEF4MVJ5MEs2K21VVTdkeVVqaWNPdTdQRW5yUEhJRW1VZS83Y2NmS21MS21TMlF3SVFZTjhibTV4aDY0c0l6eWt5UUhXc05QS0Rud3lRZkNObEtuczZ2UGxPbUpvYzh2MDAzbmJxWkwNCg&ieol=CRLF)  
 &emsp;Since the question is about credit card information, we are interested in the first post message, and the second line is   
 &emsp;"Card Number: 5453004085527987"
 ![Photos/Q10(2).png](Photos/Q10(2).png)  
