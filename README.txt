@@ -3,6 +3,7 @@ This repository is a summary of projects and CTFs related to cybersecurity that 
 --Project Tree--
  -> Defensive
     -> EntraID
+    -> Splunk
     -> HackTheBox
       -> SOC
       -> Malware Analysis
